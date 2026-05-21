@@ -43,51 +43,60 @@ public class Main {
             BufferedReader leitor = new BufferedReader(new FileReader(arquivo));
             String linha = leitor.readLine();
             List<Filme> filmes = new ArrayList<>();
-            Auxiliar aux = new Auxiliar();
 
-            while ((linha = leitor.readLine()) != null) {
+
+           while ((linha = leitor.readLine()) != null) {
+
+    try {
+                if (linha.trim().isEmpty()) continue;
+
                 String[] dados = linha.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
+
                 if (dados.length < 24) continue;
 
                 Filme filme = new Filme(
-                        aux.toInt(dados[0]),
-                        aux.toLong(dados[1]),
+                        Integer.parseInt(dados[0]),
+                        Float.parseFloat(dados[1]),
                         dados[2],
                         dados[3],
-                        aux.toInt(dados[4]),
+                        Float.parseFloat(dados[4]),
                         dados[5],
                         dados[6],
                         dados[7],
                         dados[8],
-                        aux.toDouble(dados[9]),
+                        Float.parseFloat(dados[9]),
                         dados[10],
                         dados[11],
                         dados[12],
-                        aux.toLong(dados[13]),
-                        aux.toDouble(dados[14]),
+                        Float.parseFloat(dados[13]),
+                        Float.parseFloat(dados[14]),
                         dados[15],
                         dados[16],
                         dados[17],
                         dados[18],
-                        aux.toDouble(dados[19]),
-                        aux.toInt(dados[20]),
+                        Float.parseFloat(dados[19]),
+                        Float.parseFloat(dados[20]),
                         dados[21],
                         dados[22],
                         dados[23]
                 );
 
                 filmes.add(filme);
-                System.out.println(filme);
+
+            } catch (Exception e) {
+                // ignora qualquer linha ruim
+                continue;
             }
+        }
 
             leitor.close();
-
+            System.out.println("Processando filmes...");
             for (Filme filme : filmes) {
 
-                float nota = (float) filme.vote_average;
-                float votos = filme.vote_count;
-                float orcamento = (float) filme.budget;
-                float popularidade = (float) filme.popularity;
+                float nota = filme.vote_average;
+                float votos =  filme.vote_count;
+                float orcamento = filme.budget;
+                float popularidade = filme.popularity;
                 String titulo = filme.title;
 
                 HashMap<String, Float> pertinencias = new HashMap<>();

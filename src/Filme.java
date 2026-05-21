@@ -1,38 +1,38 @@
 public class Filme {
 
     public int index;
-    public long budget;
+    public Float budget;
     public String genres;
     public String homepage;
-    public int id;
+    public Float id;
     public String keywords;
     public String original_language;
     public String original_title;
     public String overview;
-    public double popularity;
+    public Float popularity;
     public String production_companies;
     public String production_countries;
     public String release_date;
-    public long revenue;
-    public double runtime;
+    public Float revenue;
+    public Float runtime;
     public String spoken_languages;
     public String status;
     public String tagline;
     public String title;
-    public double vote_average;
-    public int vote_count;
+    public Float vote_average;
+    public Float vote_count;
     public String cast;
     public String crew;
     public String director;
 
     // 🔧 Construtor
-    public Filme(int index, long budget, String genres, String homepage, int id,
+    public Filme(int index, float budget, String genres, String homepage, float id,
                  String keywords, String original_language, String original_title,
-                 String overview, double popularity, String production_companies,
-                 String production_countries, String release_date, long revenue,
-                 double runtime, String spoken_languages, String status,
-                 String tagline, String title, double vote_average,
-                 int vote_count, String cast, String crew, String director) {
+                 String overview, float popularity, String production_companies,
+                 String production_countries, String release_date, float revenue,
+                 float runtime, String spoken_languages, String status,
+                 String tagline, String title, float vote_average,
+                 float vote_count, String cast, String crew, String director) {
 
         this.index = index;
         this.budget = budget;
@@ -60,14 +60,4 @@ public class Filme {
         this.director = director;
     }
 
-    // 📄 toString (pra debug)
-    // @Override
-    // public String toString() {
-    //     return "Filme{" +
-    //             "title='" + title + '\'' +
-    //             ", vote_average=" + vote_average +
-    //             ", popularity=" + popularity +
-    //             ", budget=" + budget +
-    //             '}';
-    // }
 }
