@@ -82,6 +82,15 @@ public class Main {
                 );
 
                 filmes.add(filme);
+                                System.out.printf(
+                        "Filme: %-35s | Nota: %.1f | Votos: %.0f | Pop: %.2f | Orc: %.0f | Score: %.2f%n",
+                        filme.title,
+                        filme.vote_average,
+                        filme.budget,
+                        filme.popularity,
+                        filme.title
+                      
+                );
 
             } catch (Exception e) {
                 // ignora qualquer linha ruim
