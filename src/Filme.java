@@ -61,13 +61,13 @@ public class Filme {
     }
 
     // 📄 toString (pra debug)
-    @Override
-    public String toString() {
-        return "Filme{" +
-                "title='" + title + '\'' +
-                ", vote_average=" + vote_average +
-                ", popularity=" + popularity +
-                ", budget=" + budget +
-                '}';
-    }
+    // @Override
+    // public String toString() {
+    //     return "Filme{" +
+    //             "title='" + title + '\'' +
+    //             ", vote_average=" + vote_average +
+    //             ", popularity=" + popularity +
+    //             ", budget=" + budget +
+    //             '}';
+    // }
 }
